@@ -1,0 +1,97 @@
+﻿@using Promotoria.Models
+@model List<DocumentosCLS>
+@{
+    ViewBag.Title = "Documentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="clearfix">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+
+            <div class="x_panel">
+                <div class="x_title">
+
+                    <h2> Lista de documentos Documentos</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    @using (Html.BeginForm("Documentos", "Prospectos", FormMethod.Post, new { @id = "frmBusqueda" }))
+                    {
+                    <table class="table table-hover table-bordered" id="tabla">
+                        <thead>
+                            <tr>
+
+                                <td>@Html.LabelFor(p => Model[0].nombre)</td>
+                                <td>@Html.LabelFor(p => Model[0].ruta)</td>
+                                <td>@Html.LabelFor(p => Model[0].Data)</td>
+
+                                <td>Visualizar Documento</td>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+
+                                <td>@item.nombre</td>
+                                <td>@item.ruta</td>
+                                <td>@item.Data</td>
+
+
+
+
+                                <td style="text-align:center">
+                                   
+                                    <a href="javascript:;" onclick="DownloadFile(@item.idDoc)" class="fa fa-eye-slash btn btn-primary " title="Ver Documento"></a>
+
+                                </td>
+
+
+                            </tr>
+                            }
+
+
+
+                        </tbody>
+
+                    </table>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@using (Html.BeginForm("DownloadFile", "Prospectos", FormMethod.Post, new { target = "_blank" }))
+{
+
+    <input type="hidden" id="hfFileId" name="FileId" />
+    <input type="submit" id="btnDownload" value="Download" style="display:none" />
+}
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    function DownloadFile(fileId) {
+        $("#hfFileId").val(fileId);
+        $("#btnDownload")[0].click();
+    };
+</script>
+<script>
+    var estado = document.getElementById("estado");
+    estado.onchange = function () {
+        var frmBusqueda = document.getElementById("frmBusqueda");
+        frmBusqueda.submit();
+    }
+
+
+</script>

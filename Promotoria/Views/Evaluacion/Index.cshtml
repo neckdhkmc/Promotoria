@@ -1,0 +1,116 @@
+﻿@using Promotoria.Models
+@model List<ProspectoCLS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="clearfix">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Evaluacion de Prospectos a clientes</h2>
+
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-hover table-bordered" id="tabla">
+                        <thead>
+                            <tr>
+
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].Nombre)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].PrimerApellido)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].SegundoApellido)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].Calle)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].Numero)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].Colonia)</tdstyle="text-align:center">
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].CodigoPostal)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].Telefono)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].RFC)</td>
+                                <td style="text-align:center">@Html.LabelFor(p => Model[0].nomEstado)</td>
+                                <td style="text-align:center">Evaluar</td>
+
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.Nombre</td>
+                                    <td>@item.PrimerApellido</td>
+                                    <td>@item.SegundoApellido</td>
+                                    <td>@item.Calle</td>
+                                    <td>@item.Numero</td>
+                                    <td>@item.Colonia</td>
+                                    <td>@item.CodigoPostal</td>
+                                    <td>@item.Telefono</td>
+                                    <td>@item.RFC</td>
+
+
+                                    @if (item.nomEstado == "Enviado")
+                                    {
+                                        <td class="bg-info" align="center" style="font-size:120%; color:#ffffff">@item.nomEstado</td>
+                                    }
+                                    else if (item.nomEstado == "Autorizado")
+                                    {
+                                        <td class="bg-success" align="center" style="font-size:120%; color:#ffffff">@item.nomEstado</td>
+                                    }
+                                    else if (item.nomEstado == "Rechazado")
+                                    {
+                                        <td class="bg-danger" align="center" style="font-size:120%; color:#ffffff">@item.nomEstado</td>
+                                    }
+
+                                <td style="text-align:center">
+
+                                    @Html.ActionLink(" ", "Editar", "Evaluacion", new { id = item.idProspecto }, new { @class = "fa fa-bar-chart btn btn-success" })
+
+                                </td>
+
+
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Desea Rechazar la Solicitud Inicial?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" onclick="Agregar()" class="btn btn-info">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,227 @@
+﻿@using Promotoria.Models
+@model ProspectoCLS
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="clearfix">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Evaluar prospecto</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="col-lg-12">
+                        <div class="col-lg-12" style="font-size: 120%;" ">
+
+                            @Html.ActionLink(" ", "Documentos", "Evaluacion", new { id = Model.idProspecto }, new { @class = "fa fa-file btn btn-success" })
+
+                        </div>
+                        @using (Html.BeginForm("Editar", "Evaluacion", FormMethod.Post, new { @id = "frmEditar" }))
+                        {
+                            <div class="col-lg-12">
+                                <div class="col-lg-3">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.idProspecto)
+                                    @Html.TextBoxFor(p => p.idProspecto, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("idProspecto", new { @class = "text-danger" })
+
+
+                                </div>
+
+
+                                <div class="col-lg-3">
+                                    <i class="fa fa-male" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Nombre)
+                                    @Html.TextBoxFor(p => p.Nombre, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("Nombre", new { @class = "text-danger" })
+
+
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <i class="fa fa-male" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.PrimerApellido)
+                                    @Html.TextBoxFor(p => p.PrimerApellido, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("PrimerApellido", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-3">
+                                    <i class="fa fa-male" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.SegundoApellido)
+                                    @Html.TextBoxFor(p => p.SegundoApellido, new { @class = "form-control", @readOnly = true })
+
+                                </div>
+                                <div>
+                                    @Html.Hidden("nul2");
+
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <i class="fa fa-street-view" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Calle)
+                                    @Html.TextBoxFor(p => p.Calle, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("Calle", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="col-lg-2">
+                                    <i class="fa fa-hashtag" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Numero)
+                                    @Html.TextBoxFor(p => p.Numero, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("Numero", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-4">
+                                    <i class="fa fa-street-view" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Colonia)
+                                    @Html.TextBoxFor(p => p.Colonia, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("Colonia", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-2">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.CodigoPostal)
+                                    @Html.TextBoxFor(p => p.CodigoPostal, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("CodigoPostal", new { @class = "text-danger" })
+                                </div>
+                                <div>
+                                    @Html.Hidden("nul2");
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Telefono)
+                                    @Html.TextBoxFor(p => p.Telefono, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("Telefono", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-lg-6">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.RFC)
+                                    @Html.TextBoxFor(p => p.RFC, new { @class = "form-control", @readOnly = true })
+                                    @Html.ValidationMessage("RFC", new { @class = "text-danger" })
+                                </div>
+
+                                <div>
+                                    @Html.Hidden("nul2");
+
+                                </div>
+                                <div class="col-lg-12">
+                                    <i class="fa fa-file-text" aria-hidden="true"></i>
+                                    @Html.LabelFor(p => p.Observaciones)
+                                    @Html.TextAreaFor(p => p.Observaciones, new { @class = "form-control" })
+                                    @Html.ValidationMessage("Observaciones", new { @class = "text-danger" })
+
+
+                                </div>
+
+                                <div>
+                                    @Html.Hidden("nul2");
+
+                                </div>
+
+                                <div class="col-lg-6">
+
+                                    <button type="button" class="btn btn-success  btn-block fa fa-check" data-toggle="modal" data-target="#exampleModal2">
+                                        Autorizar
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button type="button" class="btn btn-danger  btn-block fa fa-close " data-toggle="modal" data-target="#exampleModal">
+                                        Rechazar
+                                    </button>
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Desea rechazar a este prospecto?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <input type="submit" onclick="Aceptar()" class="btn btn-primary" value="Aceptar" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Desea autorizar a este prospecto?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                
+                @Html.ActionLink("Aceptar", "ProspectoAceptado", "Evaluacion", new { id = Model.idProspecto }, new { @class = "fa fa-check btn btn-success" })
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function Aceptar() {
+
+
+        $('#exampleModal').modal('hide');
+        swal(
+            {
+                title: "",
+                text: "¡se rechazó al prospecto!",
+                type: "success",
+                confirmButtonText: "OK"
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    ejecutar()
+                }
+            });
+        function ejecutar() {
+            var frmSolicitud = document.getElementById("frmEditar");
+            frmSolicitud.submit();
+
+        }
+
+    }
+
+    
+
+</script>

@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <!-- Bootstrap -->
+    <link href="~/Content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Content/vendors/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="~/Content/vendors/nprogress/nprogress.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="~/Content/css/custom.min.css" rel="stylesheet" />
+
+    <title>Seguimiento de prospectos</title>
+</head>
+<body  class="right_col" role="main"  style="background-color:#ffffff">
+    <div>
+        <div class="col-lg-12">
+            <div class="page-title">
+                <div class="container">
+                    <h3 style="text-align:center">Sistema para el seguimiento de prospectos</h3>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="x_panel">
+                    <div class="x_title">
+
+                        @*<h2>Tarjetas de Usuarios de soporte</h2>*@
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li>
+                                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-lg-12 text-center">
+
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="col-md-6 col-sm-6  profile_details">
+                            <div class="well profile_view">
+                                <div class="col-sm-12">
+                                    <h4 class="brief"><i>DEPARTAMENTO DE PROMOTORES</i></h4>
+                                    <div class="left col-md-7 col-sm-7">
+                                        <p><strong>Acerca de: </strong> Encargado de Promotores / Sistema Promotoría</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-building"></i> Dirección: Sinaloa México </li>
+                                            <li><i class="fa fa-phone"></i> Telefono #: 6672044977 </li>
+                                            <li><i class="fa fa-envelope"></i> Mail #:reclutamiento@talper.com.mx  </li>
+                                        </ul>
+                                    </div>
+                                    <div class="right col-md-5 col-sm-5 text-center" style="text-align:center">
+                                        <img src="~/Content/img/promotor.png" alt="" class="img-circle img-fluid" />
+                                    </div>
+                                </div>
+                                <div class=" profile-bottom text-center">
+
+                                    <div class=" col-sm-6 emphasis">
+
+
+
+                                        <button onclick="location.href='@Url.Action("PatallaInicial", "Prospectos")';return false;" class="btn btn-info btn-block"><i class="fa fa-user"> </i>Ingresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6  profile_details">
+                            <div class="well profile_view">
+                                <div class="col-sm-12">
+                                    <h4 class="brief"><i>DEPARTAMENTO DE EVALUACIÓN</i></h4>
+                                    <div class="left col-md-7 col-sm-7">
+                                        <p><strong>Acerca de: </strong> Encargado de evaluacion / Sistema Promotoría</p>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-building"></i> Dirección: Sinaloa México </li>
+                                            <li><i class="fa fa-phone"></i> Telefono #: 6672044977 </li>
+                                            <li><i class="fa fa-envelope"></i> Mail #:reclutamiento@talper.com.mx  </li>
+                                        </ul>
+                                    </div>
+                                    <div class="right col-md-5 col-sm-5 text-center">
+                                        @*<img src="~/Content/img/promotor.png" alt="" class="img-circle img-fluid" />*@
+                                        <img src="~/Content/img/246562.png" alt="" class="img-circle img-fluid" />
+                                    </div>
+                                </div>
+                                <div class=" profile-bottom text-center">
+
+                                    <div class=" col-sm-6 emphasis">
+
+
+
+                                        <button onclick="location.href='@Url.Action("PatallaInicialEvaluador", "Evaluacion")';return false;" class="btn btn-info btn-block"><i class="fa fa-user"> </i>Ingresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Content/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+
+    <script src="~/Content/vendors/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <!-- NProgress -->
+
+    <script src="~/Content/vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+
+    <script src="~/Content/js/custom.min.js"></script>
+    <script src="~/Content/Sweetalert Scripts/Scripts/sweetalert.min.js"></script>
+    <script src="~/Content/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Content/data tabgle para paginacion/DataTables-1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/Content/data tabgle para paginacion/DataTables-1.10.24/js/jquery.dataTables.js"></script>
+</body>
+</html>
